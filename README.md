@@ -9,16 +9,9 @@ To write a program to predict the marks scored by a student using the simple lin
 
 ## Algorithm
 1. Use the standard libraries in python for Gradient Design. 
-
 2. Set variables for assigning dataset values. 
-
-3. Import linear regression from sklearn.
-
-4. Assign the points for representing the graph.
-                                                                                                               
-5.Predict the regression for marks by using the representation of the graph.
-
-6.Compare the graphs and hence we obtained the linear regression for the given data.
+3. Import linear regression from sklearn and assign the points for representing the graph.
+4.Predict the regression for marks by using the representation of the graph and compare the graphs and hence we obtained the linear regression for the given data.
 
 ## Program:
 ```
@@ -34,14 +27,18 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error,mean_squared_error
 df=pd.read_csv('/content/student_scores.csv')
 #displaying the content in datafile
+print("df.head():")
 df.head()
 
+print("df.tail():")
 df.tail()
 
 #Segregating data to variables
+print("Array value of X:")
 X=df.iloc[:,:-1].values
 X
 
+print("Array value of X:")
 Y=df.iloc[:,1].values
 Y
 
@@ -55,12 +52,15 @@ regressor.fit(X_train,Y_train)
 Y_pred=regressor.predict(X_test)
 
 #displaying predicted values
+print("Values of Y prediction:")
 Y_pred
 
 #displaying actual values
+print("Array values of Y test:")
 Y_test
 
 #graph plot for training data
+print("Training set graph:")
 plt.scatter(X_train,Y_train,color="orange")
 plt.plot(X_train,regressor.predict(X_train),color="red")
 plt.title("Hours vs Scores (Training Set)")
@@ -69,6 +69,7 @@ plt.ylabel("Scores")
 plt.show()
 
 #graph plot for test data
+print("Test set graph:")
 plt.scatter(X_test,Y_test,color="purple")
 plt.plot(X_test,regressor.predict(X_test),color="yellow")
 plt.title("Hours vs Scores (Test Set)")
@@ -76,6 +77,7 @@ plt.xlabel("Hours")
 plt.ylabel("Scores")
 plt.show()
 
+print("Values of MSE,MAE and RMSE:")
 mse=mean_squared_error(Y_test,Y_pred)
 print('MSE = ',mse)
 
