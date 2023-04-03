@@ -11,6 +11,7 @@ To write a program to predict the marks scored by a student using the simple lin
 1. Use the standard libraries in python for Gradient Design. 
 2. Set variables for assigning dataset values. 
 3. Import linear regression from sklearn and assign the points for representing the graph.
+
 4.Predict the regression for marks by using the representation of the graph and compare the graphs and hence we obtained the linear regression for the given data.
 
 ## Program:
